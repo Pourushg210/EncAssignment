@@ -1,0 +1,45 @@
+<body style="background-color:rgb(83, 107, 243);">
+    <div *ngIf="isLoading" class="loading-div">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+    <br><br>
+    <div *ngIf="!isLoading">
+        <h1> Displaying {{company.name}} Details</h1>
+        <div class="table-div">
+            <mat-card class="mat-elevation-z5">
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width:40%;">
+                            <label class="key-lbl-cls">
+                            Company Name
+                        </label>
+                        </td>
+                        <td>
+                            <label>{{company.name}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="key-lbl-cls">
+                            Description
+                        </label>
+                        </td>
+                        <td colspan="4">
+                            <label>{{company.description}}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="key-lbl-cls">
+                            Logo
+                        </label>
+                        </td>
+                        <td colspan="5">
+                            <img src="{{company.logo}}" onerror="this.src='../../assets/notfound.jpg'" style="height:150px;">
+                        </td>
+                    </tr>
+                </table>
+            </mat-card>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,32 @@
+.key-lbl-cls {
+    font-weight: bold;
+    padding-left: 40px;
+}
+
+table,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+mat-card {
+    /* background-color: rgb(73, 98, 182) */
+    color: rgb(49, 41, 41);
+}
+
+.table-div {
+    margin-top: 70px;
+    margin-left: 25%;
+    width: 50%;
+    border: 1px solid green;
+    background-color: rgb(73, 98, 182);
+}
+
+h1 {
+    margin-left: 35%;
+    color: white;
+}
+
+label {
+    color: rgb(49, 41, 41);
+}

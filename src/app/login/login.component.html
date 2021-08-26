@@ -1,0 +1,55 @@
+<body>
+    <mat-grid-list [cols]="cols" rowHeight="1:1">
+        <mat-grid-tile colspan="1" rowspan="1" class="left">
+            <div class="login-card">
+                <img src="../../assets/login-required.png" alt="Login-Image">
+            </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1" rowspan="1">
+            <div class="centered login-card">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input matInput placeholder="Username" formControlName="userName" autocomplete="off">
+                                <mat-icon matPrefix>email</mat-icon>
+                                <mat-error *ngIf="loginForm.controls['userName'].hasError('required')">
+                                    User name is <strong>required</strong>
+                                </mat-error>
+                                <mat-error *ngIf="loginForm.controls['userName'].hasError('email')">
+                                    Enter valid <strong>email</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field appearance="outline" class="custom">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Password" formControlName="password" autocomplete="off">
+                                <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+                                    Password is <strong>required</strong>
+                                </mat-error>
+                                <mat-error *ngIf="loginForm.controls['password'].errors?.pattern">
+                                    Password must be combination of alphanumeric,upper case letters and special characters
+                                </mat-error>
+                                <mat-icon matPrefix>vpn_key</mat-icon>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</body>

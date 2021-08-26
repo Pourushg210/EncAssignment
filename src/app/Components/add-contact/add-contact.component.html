@@ -1,0 +1,57 @@
+<body>
+    <br><br><br><br><br>
+    <section>
+        <mat-card style="text-align: center;margin-left: 20%;margin-right: 20%;">
+            <h2 style="text-align: center;">Add Contact Persons</h2>
+            <form [formGroup]="contactFormGroup" (ngSubmit)="onSubmit()">
+                <div style="text-align: center;justify-content: center;align-items: center;">
+
+
+                    <table style="margin:auto">
+                        <tr>
+                            <td style="width:40%;">
+                                <label class="key-lbl-cls">
+                                    Name
+                                </label>
+                            </td>
+                            <mat-form-field appearance="outline">
+                                <input matInput formControlName="name" required>
+                            </mat-form-field>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="key-lbl-cls">
+                                    Country
+                                </label>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <input matInput formControlName="country" required>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="key-lbl-cls">
+                                    Phone
+                                </label>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <input matInput formControlName="phone" required autocomplete="off">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <br>
+                    <div>
+                        <button style="margin-left: -20px;" [disabled]="!contactFormGroup.valid" mat-raised-button color="primary" type="submit">Add
+                        Contact</button>
+                        <button style="margin-left: 20px;" mat-raised-button color="primary" (click)="onReset()">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card>
+    </section>
+</body>

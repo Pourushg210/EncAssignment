@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.loading-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 625px;
+    /* background-color: DodgerBlue; */
+    background-color: lightblue;
+}
+
+.component-button-row {
+    margin: 8px 8px 8px 0;
+}
+
+.key-lbl-cls {
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: left;
+}
+
+
+/* .mat-input-element,
+.mat-form-field {
+    border: 1px solid red;
+} */
